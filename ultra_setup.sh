@@ -7,8 +7,9 @@ set -e
 # ==========================================
 ENV_NAME="ark"
 PYTHON_VER="3.11"
-TORCH_VER="2.2.1"
+TORCH_VER="2.4.0"
 CUDA_TAG="cu118"
+FLASH_ATTN_VER="2.6.3"   # 匹配 2.4.0 的 Flash-Attention
 VEOMNI_SOURCE="git+https://mirror.ghproxy.com/https://github.com/ByteDance-Seed/VeOmni.git@9b91e164bea9e17f17ed490aab5e076c2335ca25"
 
 BUNDLE_DIR="./DL_Deploy_Bundle"
@@ -155,12 +156,17 @@ fi
 STEP="step5_install_flash_attn"
 if ! is_done "$STEP"; then
     echo "⚡ [5/8] 安装 Flash-Attention (预编译包)..."
-    PY_TAG="cp${PYTHON_VER//./}"
-    TORCH_TAG=$(echo $TORCH_VER | cut -d'.' -f1,2)
-    FA_CUDA_TAG=$([ "$CUDA_TAG" == "cu118" ] && echo "cu118" || echo "cu122")
-    WHL_NAME="flash_attn-2.5.6+${FA_CUDA_TAG}torch${TORCH_TAG}cxx11abiFALSE-${PY_TAG}-${PY_TAG}-linux_x86_64.whl"
-    WHL_URL="https://ghproxy.net/https://github.com/Dao-AILab/flash-attention/releases/download/v2.5.6/${WHL_NAME}"
     
+    # 提取 Python 和 Torch 的版本标签
+    PY_TAG="cp${PYTHON_VER//./}" # 3.11 -> cp311
+    
+    TORCH_TAG=$(echo $TORCH_VER | cut -d'.' -f1,2) # 2.4.0 -> 2.4
+    FA_CUDA_TAG=$([ "$CUDA_TAG" == "cu118" ] && echo "cu118" || echo "cu122")
+    
+    WHL_NAME="flash_attn-${FLASH_ATTN_VER}+${FA_CUDA_TAG}torch${TORCH_TAG}cxx11abiFALSE-${PY_TAG}-${PY_TAG}-linux_x86_64.whl"
+    WHL_URL="https://ghproxy.net/https://github.com/Dao-AILab/flash-attention/releases/download/v${FLASH_ATTN_VER}/${WHL_NAME}"
+    
+    echo "🔗 正在拉取: $WHL_NAME"
     uv pip install "$WHL_URL"
     mark_done "$STEP"
 else
