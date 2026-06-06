@@ -174,7 +174,10 @@ STEP="step6_build_veomni"
 if ! is_done "$STEP"; then
     echo "📦 [6/8] 将 VeOmni 编译为纯离线安装包..."
     if [ -e "$VEOMNI_SOURCE" ] || [[ "$VEOMNI_SOURCE" == http* ]] || [[ "$VEOMNI_SOURCE" == git+* ]]; then
-        uv pip wheel "$VEOMNI_SOURCE" --wheel-dir "$WHEEL_DIR" --no-deps
+        echo "🔗 正在从源码构建 Wheel 包: $VEOMNI_SOURCE"
+        
+        pip wheel "$VEOMNI_SOURCE" --wheel-dir "$WHEEL_DIR" --no-deps
+        
         echo "✅ VeOmni 离线包已生成至: $WHEEL_DIR"
     else
         echo "⚠️ 未找到 VeOmni 源码 ($VEOMNI_SOURCE)，跳过编译。"
