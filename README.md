@@ -1,13 +1,13 @@
 # AI-Env-Ark
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.10](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/)
+[![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/)
 [![PyTorch 2.2](https://img.shields.io/badge/PyTorch-2.2.1-EE4C2C.svg)](https://pytorch.org/)
 [![CUDA 11.8](https://img.shields.io/badge/CUDA-11.8-76B900.svg)](https://developer.nvidia.com/cuda-toolkit)
 
 本项目主要意在彻底解决国内诸多云服务器无法连接 Github、NVCC 版本/Python 版本/Glibc 版本/CUDA 版本等各类版本冲突、Flash-Attention 编译缓慢/安装困难，甚至没有 conda 等以及其他各种可能发生的问题。
 
-AI-Env-Ark 采用 `Conda (底层 C 库隔离) + uv (极速构建) + 纯离线 Wheel 预编译` 的融合架构。只需在配置良好、网络通畅的母机上构建一次即可。采用 `PyTorch 2.2.1 + cu118` 强兼容性组合（可以自行修改），目标机器显卡驱动需最低支持 CUDA 11.8 及以上。
+AI-Env-Ark 采用 `Conda (底层 C 库隔离) + uv (极速构建) + 纯离线 Wheel 预编译` 的融合架构。只需在配置良好、网络通畅的母机上构建一次即可。采用 `Python 3.11 + PyTorch 2.2.1 + cu118` 强兼容性组合（可以自行修改），目标机器显卡驱动需最低支持 CUDA 11.8 及以上。
 
 ## Quick Start
 
@@ -15,7 +15,7 @@ AI-Env-Ark 采用 `Conda (底层 C 库隔离) + uv (极速构建) + 纯离线 Wh
 
 ### Step 1: 方舟构建
 
-找一台网络通畅的 Linux 机器（建议 Ubuntu 20.04/22.04），克隆本仓库：
+找一台预装了 miniconda、网络通畅的 Linux 机器（建议 Ubuntu 20.04/22.04），克隆本仓库：
 
 ```bash
 git clone https://github.com/starx237/AI-Env-Ark.git
@@ -29,7 +29,7 @@ cd AI-Env-Ark.git
 # 1. 核心配置区
 # ==========================================
 ENV_NAME="ark"
-PYTHON_VER="3.10"
+PYTHON_VER="3.11"
 TORCH_VER="2.2.1"
 CUDA_TAG="cu118"
 
