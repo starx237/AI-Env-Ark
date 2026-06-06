@@ -6,7 +6,7 @@ set -e
 # 1. 核心配置区
 # ==========================================
 ENV_NAME="ark"
-PYTHON_VER="3.10"
+PYTHON_VER="3.11"
 TORCH_VER="2.2.1"
 CUDA_TAG="cu118"
 VEOMNI_SOURCE="git+https://mirror.ghproxy.com/https://github.com/ByteDance-Seed/VeOmni.git@9b91e164bea9e17f17ed490aab5e076c2335ca25"
