@@ -34,7 +34,7 @@ TORCH_VER="2.2.1"
 CUDA_TAG="cu118"
 
 # 私有库/内部库的 Git 链接 (支持国内镜像加速）
-VEOMNI_SOURCE="git+https://mirror.ghproxy.com/https://github.com/ByteDance-Seed/VeOmni.git@9b91e164bea9e17f17ed490aab5e076c2335ca25"
+VEOMNI_SOURCE="git+https://mirror.ghproxy.com/https://github.com/ByteDance-Seed/VeOmni.git"
 ```
 
 你还可以修改 requirements_base.txt，若不创建此文件则为默认值。
@@ -70,8 +70,6 @@ cd DL_Deploy_Bundle
 source ~/my_dl_env/bin/activate
 python -c "import torch, flash_attn; print('Success!')"
 ```
-
----
 
 ## Advanced Usage
 
