@@ -1,0 +1,52 @@
+# ==========================================
+# AI-Env-Ark 依赖清单
+# ==========================================
+
+# 1. 核心数学与数据处理
+numpy
+pandas
+scipy
+scikit-learn
+
+# 2. 计算机视觉
+opencv-python-headless
+Pillow
+albumentations
+timm
+diffusers
+
+# 3. NLP/LLM
+transformers>=5.9.0  #  VeOmni 的最低版本要求
+accelerate
+datasets
+huggingface_hub
+modelscope
+peft
+bitsandbytes
+sentencepiece
+protobuf
+safetensors
+tiktoken
+
+# 4. 注意力机制与算子优化
+einops
+opt_einsum
+flash-linear-attention
+liger-kernel
+
+# 5. 实验记录、可视化与评估
+tensorboard
+wandb
+matplotlib
+tqdm
+pyyaml
+evaluate
+
+# 6. 数据加载与底层编译工具
+torchdata
+blobfile
+ninja
+packaging
+psutil
+pydantic
+ipython
