@@ -16,7 +16,7 @@ timm
 diffusers
 
 # 3. NLP/LLM
-transformers>=4.57.3
+transformers==4.57.3
 accelerate
 datasets
 huggingface_hub
