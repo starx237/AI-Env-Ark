@@ -1,9 +1,8 @@
 # AI-Env-Ark
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/)
-[![PyTorch 2.4.1](https://img.shields.io/badge/PyTorch-2.4.1-EE4C2C.svg)](https://pytorch.org/)
-[![CUDA 11.8](https://img.shields.io/badge/CUDA-11.8-76B900.svg)](https://developer.nvidia.com/cuda-toolkit)
+本项目目前处于失败状态，因为 PyTorch 2.4 系列存在社区已知的未修复的 GPU Allocator Bug，2.5 开始对 cu118 的支持性很差，而低于 2.4 版本又无法兼容 fsdp2，尝试诸多解决方案和兼容性补丁均未能解决问题。希望有兴趣的朋友能 Pull request 提供思路和帮助。
+
+___
 
 本项目主要意在彻底解决国内诸多云服务器无法连接 Github、NVCC 版本/Python 版本/Glibc 版本/CUDA 版本等各类版本冲突、Flash-Attention 编译缓慢/安装困难，甚至没有 conda 等以及其他各种可能发生的问题。
 
