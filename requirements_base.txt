@@ -16,7 +16,7 @@ timm
 diffusers
 
 # 3. NLP/LLM
-transformers>=5.9.0  #  VeOmni 的最低版本要求
+transformers>=4.57.3
 accelerate
 datasets
 huggingface_hub
