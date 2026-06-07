@@ -7,7 +7,7 @@ set -e
 
 ENV_NAME="ark"
 PYTHON_VER="3.11"
-TORCH_VER="2.4.0"
+TORCH_VER="2.4.1"
 CUDA_TAG="cu118"
 FLASH_ATTN_VER="2.6.3"   # 匹配 2.4.0 的 Flash-Attention
 VEOMNI_SOURCE="git+https://mirror.ghproxy.com/https://github.com/ByteDance-Seed/VeOmni.git@9b91e164bea9e17f17ed490aab5e076c2335ca25"
